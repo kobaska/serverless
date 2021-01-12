@@ -32,10 +32,8 @@ if (require('../lib/utils/isStandaloneExecutable')) {
 
     // Serverless Components CLI
     if (componentsV2.runningComponents()) return () => componentsV2.runComponents();
-  } catch (error) {
-    if (process.env.SLS_DEBUG) {
+  } catch (error) {  
       require('../lib/classes/Error').logWarning(`CLI triage crashed with: ${error.stack}`);
-    }
   }
 
   // Serverless Framework CLI
